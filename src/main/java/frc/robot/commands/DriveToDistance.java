@@ -1,11 +1,8 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Factory;
-import frc.robot.Robot;
 import frc.robot.subsystems.DriveSystem;
 
 public class DriveToDistance extends CommandBase {
@@ -27,8 +24,6 @@ public class DriveToDistance extends CommandBase {
   private double current_L2;
   private double current_R1;
   private double current_R2;
-  private double current_Left;
-	private double current_Right; 
 	private double L1_rotation_count;
   private double L2_rotation_count;
   private double R1_rotation_count;

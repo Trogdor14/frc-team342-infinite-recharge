@@ -56,6 +56,7 @@ public class RobotContainer {
 
   public RobotContainer() {
 
+    joy = new Joystick(0); 
     //establishes joysticks and buttons
     leftBumper = new JoystickButton(joy, Constants.LEFTBUMPER); 
     rightBumper = new JoystickButton(joy, Constants.RIGHTBUMPER); 
