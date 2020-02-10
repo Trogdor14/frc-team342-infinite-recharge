@@ -40,6 +40,7 @@ public class RotateToAngle extends CommandBase {
 
   @Override
   public void initialize() {
+    //check to see if this is where you should reset gyro
     driveSystem.resetGyro(); 
   }
 
