@@ -4,6 +4,7 @@ package frc.robot;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.IntakeSystem;
 import frc.robot.subsystems.LaunchSubsystem;
+import frc.robot.commands.DriveToDistance;
 import frc.robot.subsystems.DriveSystem;
 import frc.robot.subsystems.LimelightSubsystem;
 
@@ -22,6 +23,7 @@ public class Factory {
     private static LaunchSubsystem launch = null; 
     private static DriveSystem driveSystem = null;
     private static LimelightSubsystem limelightSystem = null;
+    private static DriveToDistance driveToDistance = null; 
 
     public static ExampleSubsystem getExample(){
         if (example == null){
@@ -57,6 +59,14 @@ public class Factory {
             limelightSystem = new LimelightSubsystem();
         }
         return limelightSystem;
+    }
+
+    //figure 
+    public static DriveToDistance getdriveToDistance(){
+        if(driveToDistance == null) {
+            driveToDistance = new DriveToDistance(10.0);
+        }
+        return driveToDistance; 
     }
 
 }
