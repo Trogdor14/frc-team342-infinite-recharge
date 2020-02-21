@@ -27,7 +27,7 @@ public class RotateToAngle extends CommandBase {
   private static final double RotateSpeed = 1.0;
   private static final double RotateSlowSpeed = 0.5; 
   private static final double margin = 5;
-	private static double slowmargin;
+	private double slowmargin;
 	private static final double SPEED = 0.7;
 
   public RotateToAngle(double angle) {
@@ -38,7 +38,7 @@ public class RotateToAngle extends CommandBase {
 
   @Override
   public void initialize() {
-    //check to see if this is where you should reset gyro
+    //TODO include on a separate button
     driveSystem.resetGyro(); 
   }
 
@@ -53,7 +53,7 @@ public class RotateToAngle extends CommandBase {
     double diff = angle - gyro_angle; 
 
     if(diff<0) {
-      diff = diff + 360;
+      TurnRight = false;
     } else if (diff > 180){
       TurnRight = false;
     } else {
