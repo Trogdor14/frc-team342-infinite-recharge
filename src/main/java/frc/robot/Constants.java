@@ -48,17 +48,23 @@ public final class Constants {
     /* Buttons */
     // Driver controller
     public static final int DRIVER_CONTROLLER = 0;
-    public static final int DRIVER_AUTOALIGN = 1;
+    public static final int DRIVER_AUTOALIGN = 1; //trigger
     public static final int DRIVER_FIELDORIENT = 2;
-    public static final int DRIVER_TURBO = 5;
+    public static final int DRIVER_TURBO = 6;
+    public static final int DRIVER_SLOW = 5;
+    public static final int DRIVER_REVERSE_INTAKE = 2; 
 
     // Operator buttons
     public static final int OPERATOR_CONTROLLER = 1;
-    public static final int OP_LAUNCH = 4;
-    public static final int OP_SLOW = 5;
-    public static final int OP_INTAKE = 6;
-    public static final int OP_LOCKWINCH = 7;
-    public static final int OP_RUNWINCH = 8;
+    public static final int OP_LAUNCH = 5; //left bumper
+    public static final int OP_SLOW = 2; //B button
+    public static final int OP_INTAKE = 6; //right bumper
+    public static final int OP_LOCKWINCH = 7; //menu (left)
+    public static final int OP_RUNWINCH = 8; //select (right)
+    public static final int OP_REVERSE_INTAKE = 3; //X button
+    public static final int OP_TELESCOPES = 4; //Y button
+    public static final int OP_MOVEARM = 1; //A button
+
 
     /* Sensors */
     // Intake sensors
