@@ -135,8 +135,12 @@ public class DriveSystem extends SubsystemBase {
 
       mecanumDrive.driveCartesian(0.0, 0.0, ((target - current) * kP) / 300);
 
-    } else {
-      mecanumDrive.driveCartesian(xSpeed * 0.8, ySpeed * 0.8, (zRotation * 0.8) / 2);
+    } else if(isSlowMode) 
+        mecanumDrive.driveCartesian((xSpeed * 0.8) / 2, (ySpeed * 0.8) / 2, (zRotation * 0.8) / 4, -NavX.getAngle());
+      else if (isTurbo)
+        mecanumDrive.driveCartesian(xSpeed, ySpeed, zRotation, -NavX.getAngle());
+      else {
+        mecanumDrive.driveCartesian(xSpeed * 0.8, ySpeed * 0.8, (zRotation * 0.8) / 2);
     }
   }
 
@@ -227,7 +231,8 @@ public class DriveSystem extends SubsystemBase {
     accumError += Error;
     double kI = 1.0e-3;
     double kP = 4.0;
-    mecanumDrive.driveCartesian(x / 2, y / 2, ((Error * kP) + (accumError * kI)) / 300);
+    double targetError = ((Error * kP) + (accumError * kI)) / 300;
+    mecanumDrive.driveCartesian(x / 2, y / 2, targetError);
 
   }
 
@@ -270,7 +275,6 @@ public class DriveSystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    SmartDashboard.putNumber("Accumulated Error", accumError);
     mecanumDrive.feed();
     // This method will be called once per scheduler run
   }
